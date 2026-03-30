@@ -1,0 +1,16 @@
+agent:
+  name: parakeet_sortformer_speechbrain
+templates:
+- template_name: InputTemplate
+  class_name: InputTemplate
+  attributes: {}
+- template_name: ParakeetSortformerSpeechbrainASREmotionDiarization
+  class_name: ParakeetSortformerSpeechbrainASREmotionDiarization
+  template_input: InputTemplate
+  attributes:
+    audio_file_path: <<path to audio>>
+    asr_model_name: nvidia/parakeet-tdt-0.6b-v2
+    diarization_model_name: nvidia/diar_streaming_sortformer_4spk-v2.1
+    device: cuda
+    sample_rate: 16000
+    chunk_size_in_secs: 10

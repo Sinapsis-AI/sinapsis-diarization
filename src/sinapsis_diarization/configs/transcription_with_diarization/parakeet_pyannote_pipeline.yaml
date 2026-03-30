@@ -1,0 +1,17 @@
+agent:
+  name: my_test_agent
+templates:
+- template_name: InputTemplate
+  class_name: InputTemplate
+  attributes: {}
+- template_name: ParakeetPyannoteASRDiarization
+  class_name: ParakeetPyannoteASRDiarization
+  template_input: InputTemplate
+  attributes:
+    audio_file_path: <<path to audio file>>
+    asr_model_name: nvidia/parakeet-tdt-0.6b-v2
+    diarization_model_name: pyannote/speaker-diarization-community-1
+    device: cuda
+    sample_rate: 16000
+    chunk_size_in_secs: -1
+    num_speakers: 2

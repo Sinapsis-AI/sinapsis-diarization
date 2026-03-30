@@ -1,0 +1,14 @@
+agent:
+  name: canary_asr
+templates:
+- template_name: InputTemplate
+  class_name: InputTemplate
+  attributes: {}
+- template_name: SinapsisCanaryASR
+  class_name: SinapsisCanaryASR
+  template_input: InputTemplate
+  attributes:
+    model_name: "nvidia/canary-qwen-2.5b"
+    device: cuda
+    chunk_size_in_secs: -1
+    audio_file_path: <<path to audio file>>

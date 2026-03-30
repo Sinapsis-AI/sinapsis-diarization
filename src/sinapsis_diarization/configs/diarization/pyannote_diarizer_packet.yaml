@@ -1,0 +1,22 @@
+agent:
+  name: pyannote_diarizer_packet
+templates:
+- template_name: InputTemplate
+  class_name: InputTemplate
+  attributes: {}
+
+
+- template_name: AudioReaderPydub
+  class_name: AudioReaderPydub
+  template_input: InputTemplate
+  attributes:
+    audio_file_path: <<path to audio>>
+
+- template_name: SinapsisPyannoteDiarizer
+  class_name: SinapsisPyannoteDiarizer
+  template_input: AudioReaderPydub
+  attributes:
+    model_name: pyannote/speaker-diarization-community-1
+    device: cuda
+    chunk_size_in_secs: -1
+    num_speakers: 2

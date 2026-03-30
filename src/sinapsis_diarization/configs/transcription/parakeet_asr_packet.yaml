@@ -1,0 +1,20 @@
+agent:
+  name: parakeet_asr_packet
+templates:
+- template_name: InputTemplate
+  class_name: InputTemplate
+  attributes: {}
+
+- template_name: AudioReaderPydub
+  class_name: AudioReaderPydub
+  template_input: InputTemplate
+  attributes:
+    audio_file_path: <</path/to/audio/file>>
+
+- template_name: SinapsisParakeetASR
+  class_name: SinapsisParakeetASR
+  template_input: AudioReaderPydub
+  attributes:
+    model_name: nvidia/parakeet-tdt-0.6b-v2
+    device: cuda
+    chunk_size_in_secs: -1

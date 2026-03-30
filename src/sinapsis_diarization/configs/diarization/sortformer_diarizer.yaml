@@ -1,0 +1,14 @@
+agent:
+  name: sortformer_diarizer
+templates:
+- template_name: InputTemplate
+  class_name: InputTemplate
+  attributes: {}
+- template_name: SinapsisSortformerDiarizer
+  class_name: SinapsisSortformerDiarizer
+  template_input: InputTemplate
+  attributes:
+    model_name: nvidia/diar_streaming_sortformer_4spk-v2.1
+    device: cuda
+    chunk_size_in_secs: -1
+    audio_file_path: <<path to wav audio file>>

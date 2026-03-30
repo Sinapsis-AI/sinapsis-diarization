@@ -1,0 +1,14 @@
+agent:
+  name: parakeet_asr
+templates:
+- template_name: InputTemplate
+  class_name: InputTemplate
+  attributes: {}
+- template_name: SinapsisParakeetASR
+  class_name: SinapsisParakeetASR
+  template_input: InputTemplate
+  attributes:
+    model_name: nvidia/parakeet-tdt-0.6b-v2
+    device: cuda
+    chunk_size_in_secs: 10
+    audio_file_path: <<path to audio file>>

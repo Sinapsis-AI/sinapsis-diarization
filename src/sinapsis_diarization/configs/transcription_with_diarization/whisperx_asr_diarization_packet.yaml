@@ -1,0 +1,24 @@
+agent:
+  name: whisperx_asr_diarization
+templates:
+- template_name: InputTemplate
+  class_name: InputTemplate
+  attributes: {}
+
+
+- template_name: AudioReaderPydub
+  class_name: AudioReaderPydub
+  template_input: InputTemplate
+  attributes:
+    audio_file_path: <<path to audio>>
+
+- template_name: SinapsisWhisperxASRDiarization
+  class_name: SinapsisWhisperxASRDiarization
+  template_input: AudioReaderPydub
+  attributes:
+    asr_model_name: large-v3
+    device: cuda
+    sample_rate: 16000
+    chunk_size_in_secs: 10
+    min_speakers: 2
+    max_speakers: 2

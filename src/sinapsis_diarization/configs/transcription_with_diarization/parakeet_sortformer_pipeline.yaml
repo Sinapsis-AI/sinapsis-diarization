@@ -1,0 +1,16 @@
+agent:
+  name: parakeet_sortformer_pipeline
+templates:
+- template_name: InputTemplate
+  class_name: InputTemplate
+  attributes: {}
+- template_name: ParakeetSortformerASRDiarization
+  class_name: ParakeetSortformerASRDiarization
+  template_input: InputTemplate
+  attributes:
+    audio_file_path:  <<path to audio file>>
+    asr_model_name: nvidia/parakeet-tdt-0.6b-v2
+    diarization_model_name: nvidia/diar_streaming_sortformer_4spk-v2.1
+    device: cpu
+    sample_rate: 16000
+    chunk_size_in_secs: 10
