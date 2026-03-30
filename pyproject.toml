@@ -1,0 +1,81 @@
+[project]
+name = "sinapsis-diarization"
+version = "0.1.0"
+description = "Audio diarization with nvidias nemo"
+readme = "README.md"
+requires-python = ">=3.10.12"
+dependencies = [
+    "nemo-toolkit[asr,core,lightning]==2.6.2",
+    "nltk>=3.9.3",
+    "sacrebleu>=2.6.0",
+    "sinapsis>=0.2.26",
+    "torchaudio==2.8.0",
+]
+authors = [
+    {name = "SinapsisAI", email = "dev@sinapsis.tech"},
+]
+
+[project.optional-dependencies]
+pyannote = [
+    "pyannote-audio>=4.0.4",
+    "torchcodec>=0.7.0,<0.8.0",
+]
+data-tools = [
+    "sinapsis-data-readers>=0.1.28",
+]
+all = [
+    "sinapsis-diarization[data-tools,emotion,pyannote,whisperx]",
+]
+emotion = [
+    "speechbrain",
+]
+whisperx = [
+    "onnx>=1.20.1",
+    "onnxruntime==1.23.2",
+    "whisperx>=3.8.0",
+]
+
+[project.scripts]
+sinapsis-asr = "sinapsis_diarization.bin.sinapsis_asr:main"
+sinapsis-diarize = "sinapsis_diarization.bin.sinapsis_diarize:main"
+sinapsis-asr-diarize = "sinapsis_diarization.bin.sinapsis_asr_diarize:main"
+sinapsis-whisperx-asr-diarize = "sinapsis_diarization.bin.sinapsis_whisperx_asr_diarize:main"
+sinapsis-asr-diarize-emotion = "sinapsis_diarization.bin.sinapsis_asr_diarize_emotion:main"
+
+
+#[tool.uv.sources]
+#speechbrain = { git = "https://github.com/speechbrain/speechbrain.git" }
+
+
+
+[tool.ruff]
+lint.select = [
+    "ARG",
+    "BLE",
+    "C4",
+    "E",
+    "F",
+    "FIX",
+    "FLY",
+    "I",
+    "PERF",
+    "PIE",
+    "RUF",
+    "RSE",
+    "SIM",
+    "SLOT",
+    "T10",
+    "T20",
+    "TD",
+    "TID",
+]
+line-length = 120
+show-fixes = true
+
+[[tool.uv.index]]
+url = "https://pypi.sinapsis.tech/"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
