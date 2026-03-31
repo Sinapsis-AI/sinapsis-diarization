@@ -5,7 +5,7 @@ from re import compile
 
 from numpy import ndarray
 from pydantic import BaseModel, ConfigDict, Field
-from sinapsis_core.data_containers._asr_base_models import (
+from sinapsis_core.data_containers.model_types._asr_base_models import (
     DiarizedTranscript,
     SpeechConstantKeys,
     TranscriptSegment,

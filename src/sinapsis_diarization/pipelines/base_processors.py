@@ -7,7 +7,7 @@ from typing import Any, Literal
 import nltk
 import numpy as np
 import torch
-from sinapsis_core.data_containers._asr_base_models import (
+from sinapsis_core.data_containers.model_types._asr_base_models import (
     DiarizedTranscript,
     SpeakerTurn,
     SpeechConstantKeys,

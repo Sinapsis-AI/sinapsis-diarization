@@ -2,9 +2,9 @@
 from abc import abstractmethod
 from typing import Literal
 
-from sinapsis_core.data_containers._asr_base_models import DiarizedTranscript
 from sinapsis_core.data_containers.annotations import AudioAnnotations
 from sinapsis_core.data_containers.data_packet import AudioPacket, DataContainer
+from sinapsis_core.data_containers.model_types._asr_base_models import DiarizedTranscript
 from sinapsis_core.template_base import (
     Template,
     TemplateAttributes,

@@ -2,7 +2,7 @@
 from typing import Literal
 
 import numpy as np
-from sinapsis_core.data_containers._asr_base_models import DiarizedTranscript
+from sinapsis_core.data_containers.model_types._asr_base_models import DiarizedTranscript
 from sinapsis_core.utils.logging_utils import sinapsis_logger
 
 from sinapsis_diarization.base_models.diarization_output import (

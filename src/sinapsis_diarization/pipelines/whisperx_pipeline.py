@@ -4,7 +4,7 @@ from typing import Literal
 import numpy as np
 import pandas as pd
 import torch
-from sinapsis_core.data_containers._asr_base_models import (
+from sinapsis_core.data_containers.model_types._asr_base_models import (
     DiarizedTranscript,
     SpeechConstantKeys,
     TranscriptSegment,
