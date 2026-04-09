@@ -23,7 +23,7 @@ Sinapsis Diarization
 <a href="#license">🔍 License</a>
 </p>
 
-The `sinapsis-diarization` module provides templates for real-time facial recognition with RetinaFace and DeepFace, enabling efficient and accurate inference.
+The `sinapsis-diarization` module provides templates for Automatic Speech Recognition, Diarization and Emotion Recognition.
 
 
 <h2 id="installation">🐍 Installation</h2>
